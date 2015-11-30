@@ -30,6 +30,9 @@ set background=dark
 set t_Co=256
 colorscheme PaperColor
 
+" Escape too far away
+imap jk <Esc>
+
 " White space
 " Tab/white space Config
 filetype plugin indent on
@@ -58,6 +61,8 @@ nnoremap <c-l> <c-w>l
 " Shorten wait from insert mode to normal
 set timeoutlen=1000 ttimeoutlen=0
 
+" Toggle paste mode
+set pastetoggle=<leader>p
 
 " ------------------------------------------------------------------------------------
 " LIGHTLINE
