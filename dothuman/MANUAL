@@ -1,0 +1,29 @@
+MANUAL INSTALL
+==============
+
+GTK Theme
+----------
+Use apt-get to install gtk-theme and icons
+    https://github.com/snwh/paper-gtk-theme
+Use Unity Tweak Tool to set theme and icons
+
+Terminal Theme
+---------------
+cd ~/.config/base16-gnome-terminal/ && git clone https://github.com/chriskempson/base16-gnome-terminal
+source .config/base16-gnome-terminal/base16-google.dark.sh
+
+Shortcut Managment
+------------------
+Use apt-get to install 'CompizConfi Settings Manager'
+Open and navigate to 'Ubuntu Unity Plugin' to view 'General', 'Launchers', 'Switchers', etc menus
+
+Other keyboard shortcuts set at 'System Settings' > 'Keyboard' > 'Shortcuts':
+    i.e. - gnome-session-quit --power-off --force -> <Ctrl><Alt><Del>
+
+Vim Airline Fonts
+-----------------
+Use powerline pre-patched fonts by:
+    git clone https://github.com/powerline/fonts
+    Edit install.sh to put all fonts in ~/.fonts instead of ~/.local/share/fonts
+    ./install.sh
+Else look at patching own font

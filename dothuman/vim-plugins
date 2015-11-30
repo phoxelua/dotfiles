@@ -1,0 +1,16 @@
+ag.vim
+ctrlp.vim
+nerdtree
+syntastic
+tabline.vim
+tagbar
+vim-airline
+vim-better-whitespace
+vim-css-color
+vim-fugitive
+vim-indexed-search
+vim-javascript-syntax
+vim-multiple-cursors
+vim-nerdtree-tabs
+vim-signify
+YouCompleteMe
