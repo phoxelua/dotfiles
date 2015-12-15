@@ -93,6 +93,7 @@ alias mf=mf
 alias ms=ms
 alias gjk="git reset --soft HEAD~"
 alias smart-dice=dice
+alias diss="./manage.py turn_off_dynamic_security_settings"
 
 function dice() {
     PYTHONPATH=.:.. python scripts/smart_dice.py

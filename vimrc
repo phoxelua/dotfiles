@@ -64,6 +64,9 @@ set timeoutlen=1000 ttimeoutlen=0
 " Toggle paste mode
 set pastetoggle=<leader>p
 
+" Open new file in tab
+nnoremap te  :tabedit<Space>
+
 " ------------------------------------------------------------------------------------
 " LIGHTLINE
 " ------------------------------------------------------------------------------------
