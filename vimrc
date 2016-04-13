@@ -30,9 +30,6 @@ set background=dark
 set t_Co=256
 colorscheme PaperColor
 
-" Escape too far away
-imap jk <Esc>
-
 " White space
 " Tab/white space Config
 filetype plugin indent on
@@ -66,6 +63,16 @@ set pastetoggle=<leader>p
 
 " Open new file in tab
 nnoremap te  :tabedit<Space>
+
+" Get vim to actually f*cking recognize markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+
+" Remove annoying ass omni-complete tip window
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+"" Escape too far away
+imap jk <Esc>
 
 " ------------------------------------------------------------------------------------
 " LIGHTLINE
@@ -149,6 +156,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_python_checkers=['python', 'flake8']
+let g:syntastic_python_flake8_args = "--max-line-length=150"
 let g:syntastic_javascript_checkers = ['jshint']
 let JSHintUpdateWriteOnly=1
 nnoremap <C-e> :SyntasticCheck<CR>
@@ -158,4 +166,3 @@ nnoremap <C-e> :SyntasticCheck<CR>
 " YCM
 " ------------------------------------------------------------------------------------
 nnoremap <leader>jt :YcmCompleter GoTo<CR>
-

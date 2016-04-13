@@ -49,11 +49,11 @@ ZSH_THEME="bira"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo virtualenvwrapper)
+plugins=(git sudo virtualenvwrapper web-search command-not-found)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/howardn/.riak-2.1.1/rel/riak/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export WORKON_HOME=$HOME/.virtualenvs
 export EDITOR=vim
 export GIRI_HOME=$HOME/Captricity/giri
@@ -86,14 +86,22 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
-alias cdcp="cd ~/Captricity/conductor/conductor"
+alias cdcp="cd ~/Documents/bettermint"
+alias cdcon="cd ~/Captricity/conductor/conductor && conductorrc"
+alias cdcip="cd ~/Captricity/Cipher/cipher && workon cipher && cipherrc"
+alias giri="cd ~/Captricity/giri/giri && source ~/.giri_profile"
+alias mp=mp
 alias cdcap="cd ~/Captricity/arabica/captricity"
-alias wtf="source ~/.conductor_env"
+alias conductorrc="source ~/.conductorrc"
+alias cipherrc="source ~/.cipherrc"
 alias mf=mf
 alias ms=ms
 alias gjk="git reset --soft HEAD~"
 alias smart-dice=dice
 alias diss="./manage.py turn_off_dynamic_security_settings"
+
+# ghostscript should die
+alias gs=""
 
 function dice() {
     PYTHONPATH=.:.. python scripts/smart_dice.py
@@ -101,6 +109,10 @@ function dice() {
 
 function gg(){
     grep -Hnr $1
+}
+
+function mp(){
+    ./scripts/tear_down_server.sh && ./manage.py make_playground
 }
 
 function mf(){
@@ -116,3 +128,8 @@ function chpwd() {
 	ls -lh
 }
 
+# Python path
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/dist-packages
+
+export NVM_DIR="/home/howardn/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
