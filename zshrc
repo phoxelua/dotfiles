@@ -86,7 +86,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
-alias cdcp="cd ~/Documents/bettermint"
+alias nvimrc="nvim ~/.config/nvim/init.vim"
+alias cdcp="cd ~/Documents/matcha"
 alias cdcon="cd ~/Captricity/conductor/conductor && conductorrc"
 alias cdcip="cd ~/Captricity/Cipher/cipher && workon cipher && cipherrc"
 alias giri="cd ~/Captricity/giri/giri && source ~/.giri_profile"
@@ -99,9 +100,15 @@ alias ms=ms
 alias gjk="git reset --soft HEAD~"
 alias smart-dice=dice
 alias diss="./manage.py turn_off_dynamic_security_settings"
+alias gdsf="gdsf"
+alias v="nvim"
 
 # ghostscript should die
 alias gs=""
+
+function gdsf(){
+    git dsf $1
+}
 
 function dice() {
     PYTHONPATH=.:.. python scripts/smart_dice.py
@@ -129,7 +136,11 @@ function chpwd() {
 }
 
 # Python path
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/dist-packages
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/dist-packages:/usr/lib/python2.7/dist-packages:/usr/local/lib/python3.5/site-packages
+
 
 export NVM_DIR="/home/howardn/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export LESS='-R -X -F'
+alias ag="ag --pager less"

@@ -21,22 +21,35 @@ execute pathogen#infect()
 " ------------------------------------------------------------------------------------
 " BASIC CONFIGURATION
 " ------------------------------------------------------------------------------------
+
+set nocompatible
+
 " Color
-:syntax on
+syntax on
 set encoding=utf-8
 set number
-set hlsearch
 set background=dark
 set t_Co=256
 colorscheme PaperColor
 
 " White space
 " Tab/white space Config
+filetype indent on
+filetype plugin on
 filetype plugin indent on
+
+" Turn on incremental search with ignore case (except explicit caps)
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+
 " show existing tab with 4 spaces width
 set tabstop=4
+
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
+
 " On pressing tab, insert 4 spaces
 set expandtab
 
@@ -129,6 +142,27 @@ let g:ctrlp_prompt_mappings = {
 
 
 " ------------------------------------------------------------------------------------
+" Easy Motion
+" ------------------------------------------------------------------------------------
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>b <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+
+" ------------------------------------------------------------------------------------
 " MULTIPLE CURSORS
 " ------------------------------------------------------------------------------------
 let g:multi_cursor_start_key='<C-m>'
@@ -143,6 +177,10 @@ let g:multi_cursor_quit_key='<C-m>'
 map <C-n> :NERDTreeTabsToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
 
+" ------------------------------------------------------------------------------------
+" SNIPPETS
+" ------------------------------------------------------------------------------------
+nnoremap <leader>i oimport ipdb; ipdb.set_trace()<Esc>
 
 " ------------------------------------------------------------------------------------
 " SYNTASTIC
@@ -158,6 +196,8 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 let g:syntastic_python_checkers=['python', 'flake8']
 let g:syntastic_python_flake8_args = "--max-line-length=150"
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+let g:syntastic_typescript_tslint_args = "--config ~/.tslint.json"
 let JSHintUpdateWriteOnly=1
 nnoremap <C-e> :SyntasticCheck<CR>
 
@@ -166,3 +206,7 @@ nnoremap <C-e> :SyntasticCheck<CR>
 " YCM
 " ------------------------------------------------------------------------------------
 nnoremap <leader>jt :YcmCompleter GoTo<CR>
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_ljg_level = 'debug'
+let g:ycm_server_use_vim_stdout = 0
