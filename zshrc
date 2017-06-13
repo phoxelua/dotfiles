@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/howardn/.oh-my-zsh
+export ZSH=/home/hao/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,16 +49,14 @@ ZSH_THEME="bira"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo virtualenvwrapper web-search command-not-found)
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/hao/.local/bin"
+source ~/.local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+plugins=(git sudo web-search command-not-found)
 
 # User configuration
-
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export WORKON_HOME=$HOME/.virtualenvs
 export EDITOR=vim
 export GIRI_HOME=$HOME/Captricity/giri
-source /usr/local/bin/virtualenvwrapper.sh
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -84,24 +82,16 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zshrc="vim ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
+alias zshrc="nvim ~/.zshrc"
+alias vimrc="nvim ~/.config/nvim/init.vim"
 alias cdcp="cd ~/Documents/matcha"
-alias cdcon="cd ~/Captricity/conductor/conductor && conductorrc"
-alias cdcip="cd ~/Captricity/Cipher/cipher && workon cipher && cipherrc"
-alias giri="cd ~/Captricity/giri/giri && source ~/.giri_profile"
-alias mp=mp
-alias cdcap="cd ~/Captricity/arabica/captricity"
-alias conductorrc="source ~/.conductorrc"
-alias cipherrc="source ~/.cipherrc"
+alias cdw="cd ~/Modsy/www/site"
 alias mf=mf
 alias ms=ms
 alias gjk="git reset --soft HEAD~"
-alias smart-dice=dice
-alias diss="./manage.py turn_off_dynamic_security_settings"
 alias gdsf="gdsf"
 alias v="nvim"
+alias ag="ag --path-to-ignore ~/.agignore --pager less"
 
 # ghostscript should die
 alias gs=""
@@ -110,37 +100,19 @@ function gdsf(){
     git dsf $1
 }
 
-function dice() {
-    PYTHONPATH=.:.. python scripts/smart_dice.py
-}
-
-function gg(){
-    grep -Hnr $1
-}
-
-function mp(){
-    ./scripts/tear_down_server.sh && ./manage.py make_playground
-}
-
 function mf(){
-    ./manage.py fullserver -p $1
+    ./manage.py runserver $1
 }
 
 function ms(){
     ./manage.py shell_plus
 }
 
-function chpwd() {
-	emulate -L zsh
-	ls -lh
-}
-
 # Python path
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/dist-packages:/usr/lib/python2.7/dist-packages:/usr/local/lib/python3.5/site-packages
+export PYTHONPATH=/usr/bin/python2:/usr/lib/python2.7/dist-packages:/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python2.7/site-packages
 
 
 export NVM_DIR="/home/howardn/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export LESS='-R -X -F'
-alias ag="ag --pager less"

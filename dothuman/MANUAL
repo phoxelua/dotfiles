@@ -29,3 +29,7 @@ Use powerline pre-patched fonts by:
     refresh font cache
     close all instances of terminal!
 Else look at patching own font
+
+
+iterm
+https://gist.github.com/kevin-smets/8568070
