@@ -30,6 +30,11 @@ Use powerline pre-patched fonts by:
     close all instances of terminal!
 Else look at patching own font
 
+Last time 2/22/2018 I just did this: sudo apt-get install fonts-powerline (from powerline git) and it worked...
+
 
 iterm
 https://gist.github.com/kevin-smets/8568070
+
+vim-plug for package
+https://github.com/junegunn/vim-plug

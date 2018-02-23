@@ -109,10 +109,13 @@ function ms(){
 }
 
 # Python path
-export PYTHONPATH=/usr/bin/python2:/usr/lib/python2.7/dist-packages:/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python2.7/site-packages
+export PYTHONPATH=/usr/bin/python2
+#:/usr/lib/python2.7/dist-packages:/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python2.7/site-packages
 
 
 export NVM_DIR="/home/howardn/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export LESS='-R -X -F'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
