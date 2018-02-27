@@ -5,9 +5,9 @@
     {
         "link": {
             "~/.dotfiles": "",
-            "~/.vim": "vim/",
             "~/.vimrc": "vimrc",
-            "~/.zshrc": "zshrc"
+            "~/.zshrc": "zshrc",
+            "~/.config/nvim/init.vim": "nvimrc"
         }
     },
     {
