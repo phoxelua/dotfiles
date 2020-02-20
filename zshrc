@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/hao/.oh-my-zsh
+export ZSH=/Users/howardn/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -50,9 +50,9 @@ ZSH_THEME="bira"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/hao/.local/bin"
-source ~/.local/bin/virtualenvwrapper.sh
-export WORKON_HOME=$HOME/.virtualenvs
-plugins=(git sudo web-search command-not-found)
+# source ~/.local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+plugins=(git sudo command-not-found)
 
 # User configuration
 export EDITOR=vim
