@@ -30,7 +30,12 @@ Use powerline pre-patched fonts by:
     close all instances of terminal!
 Else look at patching own font
 
+For Mac [last updated 5/14/2020]: Do all the above (don't need to refresh font cache, but need to close terms): Just change iTerm2 to Preferences > Profiles > Text and toggle "Use a different font for non-ASCII text" + Pick any powerline font
+
+
+
 Last time 2/22/2018 I just did this: sudo apt-get install fonts-powerline (from powerline git) and it worked...
+
 
 
 iterm
